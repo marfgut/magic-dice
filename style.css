@@ -1,0 +1,119 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url('imágenes/fondo.png');
+  background-size: cover;
+  background-position: center;
+  color: rgb(255, 255, 255);
+  font-family: serif;
+  margin: 0;
+  overflow: hidden; /* Evita el desbordamiento, evita que salga la barrita vertical */
+}
+
+#app {
+  position: relative; 
+  width: 100%;
+  height: 100%;
+}
+
+#mensaje-lanzar {
+  position: absolute;
+  top: 65%; /* Posición vertical */
+  left: 50%; /* Mueve el borde izquierdo del elemento al 50% del ancho del contenedor */
+  transform: translateX(-50%); /*  Mueve el elemento hacia la izquierda en un 50% de su propio ancho */
+    /*(estas dos líneas juntas centran el dado horizontalmente) */
+  font-size: 2em;
+  opacity: 1;
+  transition: opacity 0.3s ease-out;
+  max-width: 100%; 
+  width: max-content;
+}
+#mensaje-lanzar.desvanecer {
+  opacity: 0;
+}
+
+#dado-inicial {
+  position: absolute;
+  top: 15%;
+  left: 50%; 
+  transform: translateX(-50%); 
+  width: 270px;
+  height: 270px;
+  cursor: pointer; /* Cambia el cursor a una mano */
+  transition: transform 0.2s ease-in-out;
+}
+#dado-inicial:hover {
+  transform: translateX(-50%) scale(1.1); /*Si no incluyo translateX(-50%), el dado perderá su centrado horizontal */
+}
+
+#dado-resultado {
+  position: absolute;
+  top: 15%; 
+  left: 50%; 
+  transform: translateX(-50%); 
+  width: 270px;
+  height: 270px;
+}
+
+.dado-resultado-6 {
+  cursor: pointer;
+  position: relative;
+  transform: translateX(-50%); 
+  transition: transform 0.2s ease-in-out; 
+}
+.dado-resultado-6:hover {
+  transform: translateX(-50%) scale(1.1);
+}
+
+@keyframes lanzarDado {
+  0% { transform: translate(-50%, 0) rotate(0deg); opacity: 1; } 
+  50% { transform: translate(-50%, -200px) rotate(360deg); opacity: 0.8; } 
+  100% { transform: translate(-50%, -400px) rotate(720deg); opacity: 0; } 
+}
+
+@keyframes caerDado {
+  0% { transform: translate(-50%, -400px) rotate(-720deg); opacity: 0; } 
+  50% { transform: translate(-50%, -200px) rotate(-360deg); opacity: 0.8; } 
+  100% { transform: translate(-50%, 0) rotate(0deg); opacity: 1; } 
+}
+
+.lanzando {
+  animation: lanzarDado 1s ease-in forwards;
+}
+
+.cayendo {
+  animation: caerDado 1s ease-out forwards;
+}
+
+#frase {
+  position: absolute;
+  top: 65%; 
+  left: 50%; 
+  transform: translateX(-50%); 
+  font-size: 1.7em;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  max-width: 90%; 
+  width: max-content;
+}
+#frase.aparecer {
+  opacity: 1;
+}
+
+.oculto {
+  display: none;
+}
+
+#sticker {
+  position: absolute;
+  top: 60%; 
+  left: 80%; 
+  transform: translateX(-50%); 
+  width: 150px;
+  height: 150px;
+  background-size: cover;
+  background-position: center;
+}
