@@ -1,5 +1,5 @@
 # ✦ Dado mágico 𖦹๋࣭⭑
-Esta es una miniaplicación desarrollada con *Electron* que simula el lanzamiento de un dado, mostrando un resultado aleatorio junto con un mensaje y audio personalizado. 
+Esta es una miniaplicación desarrollada con *Electron* que simula el lanzamiento de un dado, mostrando el resultado aleatorio junto con un mensaje y audio personalizado. 
 
 ### Archivos
 - `main.js`: Configura la ventana de la app usando *Electron*.
