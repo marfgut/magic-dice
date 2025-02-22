@@ -1,4 +1,4 @@
-# ✦ Dado mágico 𖦹๋࣭⭑
+# ✦ Dado mágico ꩜
 Esta es una miniaplicación desarrollada con *Electron* que simula el lanzamiento de un dado, mostrando el resultado aleatorio junto con un mensaje y audio personalizado. 
 
 ### Archivos
